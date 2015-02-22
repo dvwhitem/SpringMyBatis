@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.7">
+ <project-name>schema</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="MyBatis" />
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/mybatis" />
+   <property key="UID" value="mybatis" />
+   <property key="PWD" value="123456" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+  <data-source id="DS0">
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="Logical" value="MyBatis" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/mybatis" />
+   <property key="UID" value="mybatis" />
+   <property key="PWD" value="123456" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+  <database id="DB0" populated="true" UUID="ea4e26a7-c62d-4f7c-90c6-63020b21a3bd" dbcs-ref="DS0" name="MyBatis" physicalName="MyBatis" >
+   <catalog id="CAT1" populated="true" UUID="0ea20c4b-0652-4069-826e-29d76ffdea8f" name="mybatis" nativeTerm="database" physicalName="mybatis" >
+    <schema id="SCH2" populated="false" UUID="effecc5d-1cd2-4948-8971-78843ce49fb2" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
+    </schema>
+    <schema id="SCH3" populated="false" UUID="f34758a9-03c0-47cd-b695-1c2845af0ce1" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
+    </schema>
+    <schema id="SCH4" populated="false" UUID="3873396e-7155-45df-8e43-aa7414d791df" name="pg_toast_temp_1" nativeTerm="schema" physicalName="pg_toast_temp_1" >
+    </schema>
+    <schema id="SCH5" populated="true" UUID="bb896b7c-f119-46f8-a0cf-dea12cf8bc0a" name="public" nativeTerm="schema" physicalName="public" >
+    </schema>
+   </catalog>
+   <relationships>
+   </relationships>
+  </database>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB7" populated="true" UUID="2ccaab2b-ef36-424e-8286-646375aa7fff" name="contact" objectType="TABLE" physicalName="contact" >
+   <remarks></remarks>
+   <folder id="FOLTAB71" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL8" populated="true" UUID="9e43ba1e-87ed-4cfe-a016-40e132a07492" autoIncrement="true" autoIncrementSequenceName="contact_contact_id_seq" defaultValue="" name="contact_id" nullable="0" physicalName="contact_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL9" populated="true" UUID="cd6a822d-7dde-4c03-aa9a-bf30d8c7d14e" autoIncrement="false" autoIncrementSequenceName="contact_last_name_seq" defaultValue="" name="last_name" nullable="0" physicalName="last_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL10" populated="true" UUID="ff0494cb-3222-4617-acac-88c89a4dd53a" autoIncrement="false" autoIncrementSequenceName="contact_first_name_seq" defaultValue="" name="first_name" nullable="0" physicalName="first_name" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL11" populated="true" UUID="04e7511b-003e-40c9-a4a9-f6cd3a1cc167" autoIncrement="false" autoIncrementSequenceName="contact_birth_date_seq" defaultValue="" name="birth_date" nullable="0" physicalName="birth_date" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="93" userDefinedTypeUUID="6497d8de-0e00-40d6-a42e-e2adca83be64" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB73" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB72" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB74" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX12" populated="true" UUID="33d3ba97-3e74-439d-b00c-a77c7d90ae19" clustered="false" name="contact_id" physicalName="contact_id" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC13" populated="true" UUID="460e29d0-c869-4e1e-9e3c-a7091d2f3ecc" ascendingOrDescending="UNSPECIFIED" column-ref="COL8" name="contact_id" physicalName="contact_id" />
+    </index>
+    <index id="IDX14" populated="true" UUID="a8e686c9-8fa3-439a-8635-ac15df718671" clustered="false" name="contact_idx" physicalName="contact_idx" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC15" populated="true" UUID="d01089b9-1457-4566-8c2e-2027a13607bf" ascendingOrDescending="UNSPECIFIED" column-ref="COL9" name="last_name" physicalName="last_name" />
+     <index-column id="IDC16" populated="true" UUID="783a2ebc-391d-4378-9e04-fcb46dd11971" ascendingOrDescending="UNSPECIFIED" column-ref="COL10" name="first_name" physicalName="first_name" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB17" populated="true" UUID="84a992f3-2e66-4993-a01c-f8a5dd95b3ed" name="hobby" objectType="TABLE" physicalName="hobby" >
+   <remarks></remarks>
+   <folder id="FOLTAB171" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL18" populated="true" UUID="cb7cb396-2eee-4fc9-a3d6-ab4717eb25f2" autoIncrement="false" autoIncrementSequenceName="hobby_hobby_id_seq" defaultValue="" name="hobby_id" nullable="0" physicalName="hobby_id" precision="20" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB173" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB172" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB174" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX19" populated="true" UUID="48542a89-ae67-4cca-a320-96bb4f6371c0" clustered="false" name="hobby_id" physicalName="hobby_id" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC20" populated="true" UUID="296cf18e-aadf-46dc-b813-00b83b4e431c" ascendingOrDescending="UNSPECIFIED" column-ref="COL18" name="hobby_id" physicalName="hobby_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB21" populated="true" UUID="43af6229-75cb-4d40-a1f1-bf38942a1abf" name="contact_hobby_detail" objectType="TABLE" physicalName="contact_hobby_detail" >
+   <remarks></remarks>
+   <folder id="FOLTAB211" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL22" populated="true" UUID="1723d317-16d8-424d-843f-ae791242f31e" autoIncrement="false" autoIncrementSequenceName="contact_hobby_detail_contact_id_seq" defaultValue="" name="contact_id" nullable="0" physicalName="contact_id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="28dfc01a-80b4-4bc2-94d6-79fd85a34dee" autoIncrement="false" autoIncrementSequenceName="contact_hobby_detail_hobby_id_seq" defaultValue="" name="hobby_id" nullable="0" physicalName="hobby_id" precision="20" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB213" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB212" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB214" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX24" populated="true" UUID="09f36302-c12a-405b-bfbd-abeb282a9ea4" clustered="false" name="contact_id, hobby_id" physicalName="contact_id__hobby_id" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC25" populated="true" UUID="48f17b1b-ef38-4d04-b37f-6952e8405a24" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="contact_id" physicalName="contact_id" />
+     <index-column id="IDC26" populated="true" UUID="07477c1c-709e-48fa-8996-bfe2a409dcc4" ascendingOrDescending="UNSPECIFIED" column-ref="COL23" name="hobby_id" physicalName="hobby_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB27" populated="true" UUID="7fba91a3-3092-4d09-80e9-c702abf8ba0d" name="contact_tel_detail" objectType="TABLE" physicalName="contact_tel_detail" >
+   <remarks></remarks>
+   <folder id="FOLTAB271" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL28" populated="true" UUID="49f41f47-310b-4aa1-b814-1c4536e90cc6" autoIncrement="true" autoIncrementSequenceName="contact_tel_detail_contact_tel_detail_id_seq" defaultValue="" name="contact_tel_detail_id" nullable="0" physicalName="contact_tel_detail_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL29" populated="true" UUID="82f7cbc7-6c2e-4ec2-bb2d-d46a657662c1" autoIncrement="false" autoIncrementSequenceName="contact_tel_detail_contact_id_seq" defaultValue="" name="contact_id" nullable="0" physicalName="contact_id" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL30" populated="true" UUID="b46b5d65-b3e1-4711-ab9f-0848ca9f6e0e" autoIncrement="false" autoIncrementSequenceName="contact_tel_detail_tel_type_seq" defaultValue="" name="tel_type" nullable="0" physicalName="tel_type" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL31" populated="true" UUID="1f9fd71f-b23d-4c48-81fa-9bfa6dc80621" autoIncrement="false" autoIncrementSequenceName="contact_tel_detail_tel_number_seq" defaultValue="" name="tel_number" nullable="0" physicalName="tel_number" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB273" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB272" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB274" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX32" populated="true" UUID="e243851e-e6a4-4d62-b79c-8ca64da20154" clustered="false" name="contact_tel_detail_id" physicalName="contact_tel_detail_id" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC33" populated="true" UUID="2567b6ed-a242-4467-b329-811b3958e161" ascendingOrDescending="UNSPECIFIED" column-ref="COL28" name="contact_tel_detail_id" physicalName="contact_tel_detail_id" />
+    </index>
+    <index id="IDX34" populated="true" UUID="52520c45-c3d1-47b6-92be-59a0f463344f" clustered="false" name="contact_tel_detail_idx" physicalName="contact_tel_detail_idx" primaryKeyIndex="false" unique="true" >
+     <index-column id="IDC35" populated="true" UUID="08d735ea-0b05-40da-acfb-5dab542a07cf" ascendingOrDescending="UNSPECIFIED" column-ref="COL29" name="contact_id" physicalName="contact_id" />
+     <index-column id="IDC36" populated="true" UUID="a93261a7-15d8-4ad3-afe7-7c258f53802f" ascendingOrDescending="UNSPECIFIED" column-ref="COL30" name="tel_type" physicalName="tel_type" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL37" populated="true" UUID="3a9f1d29-9499-4b6b-8ccb-14edf94e7913" deferrability="7" deleteRule="3" fk-table-ref="TAB27" fkCardinality="7" identifying="false" name="contact_contact_tel_detail_fk" physicalName="contact_contact_tel_detail_fk" pk-table-ref="TAB7" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP38" populated="true" UUID="91f8d4e0-ce30-447b-b1d4-79ccf132220c" fk-column-ref="COL29" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL8" />
+   </relationship>
+   <relationship id="REL39" populated="true" UUID="0996cd71-0178-4c86-bfa1-9fd9cbbc7924" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="false" name="contact_contact_hobby_detail_fk" physicalName="contact_contact_hobby_detail_fk" pk-table-ref="TAB7" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP40" populated="true" UUID="47e50888-98fe-4ca6-a6bf-c6db57bbd1e1" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL8" />
+   </relationship>
+   <relationship id="REL41" populated="true" UUID="308b6b4b-6d29-4f88-98be-7c06018c0020" deferrability="7" deleteRule="3" fk-table-ref="TAB21" fkCardinality="7" identifying="false" name="hobby_contact_hobby_detail_fk" physicalName="hobby_contact_hobby_detail_fk" pk-table-ref="TAB17" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP42" populated="true" UUID="50eef9d7-3bd2-459e-8f5a-10ec27d1b670" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL18" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB7" x="106" y="146" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB17" x="512" y="423" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB21" x="107" y="421" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB27" x="484" y="145" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL37" pkConnection="0.4888888888888889" fkConnection="0.5" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL39" pkConnection="0.4925373134328358" fkConnection="0.5026178010471204" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL41" pkConnection="0.5555555555555556" fkConnection="0.45" rLineColor="0x333333" pkLabelText="" fkLabelText="" orientation="18"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>

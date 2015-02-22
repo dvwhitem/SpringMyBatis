@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Contact Mapper with Nested Results for Collection -->
+<mapper namespace="com.home.springmybatis.persistence.ContactMapper">
+
+    <resultMap id="contactResultMap" type="Contact">
+        <id property="id" column="contact_id" />
+        <result property="firstName" column="first_name" />
+        <result property="lastName" column="last_name" />
+        <result property="birthDate" column="birth_date" />
+    </resultMap>
+
+
+    <select id="findAll" resultMap="contactResultMap">
+        SELECT
+        contact_id,
+        first_name,
+        last_name,
+        birth_date
+        FROM CONTACT
+    </select>
+</mapper>
