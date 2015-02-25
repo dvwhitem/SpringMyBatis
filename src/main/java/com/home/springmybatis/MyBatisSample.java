@@ -22,7 +22,8 @@ public class MyBatisSample {
 
         List<Contact> contacts;
 
-        // all contact
+        // all contactgo
+        
         contacts = contactService.findAll();
         listContacts(contacts);
 
