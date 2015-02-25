@@ -2,6 +2,7 @@ package com.home.springmybatis.service.mybatis;
 
 import com.home.springmybatis.domain.Contact;
 import com.home.springmybatis.domain.ContactTelDetail;
+import com.home.springmybatis.domain.SearchCriteria;
 import com.home.springmybatis.persistence.ContactMapper;
 import com.home.springmybatis.service.ContactService;
 import org.apache.commons.logging.Log;
@@ -44,8 +45,11 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Contact findById(Long id) {
-        return null;
+        Contact contact = contactMapper.findById(id);
+        populateContactTelDetail(contact);
+        return contact;
     }
 
     @Override
@@ -59,8 +63,21 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Contact> findByFirstNameAndLastName(String firstName, String lastName) {
-        return null;
+        log.info("Finding contact with first name: " + firstName + " last name: " + lastName);
+//        Contact contact = new Contact();
+//        contact.setFirstName(firstName);
+//        contact.setLastName(lastName);
+        SearchCriteria criteria = new SearchCriteria();
+        criteria.setFirstName(firstName);
+        criteria.setLastName(lastName);
+
+        List<Contact> contacts = contactMapper.findByFirstNameAndLastName(criteria);
+        for(Contact contactTemp: contacts) {
+            populateContactTelDetail(contactTemp);
+        }
+        return contacts;
     }
 
     private void populateContactTelDetail(Contact contact) {

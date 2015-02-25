@@ -12,13 +12,29 @@
         <result property="birthDate" column="birth_date" />
     </resultMap>
 
+    <!--<resultMap id="contactResultDetailMap" type="Contact">-->
+        <!--<id property="id" column="contact_id"/>-->
+        <!--<result property="firstName" column="first_name" />-->
+        <!--<result property="lastName" column="last_name" />-->
+        <!--<result property="birthDate" column="birth_date" />-->
+        <!--<collection property="contactTelDetails" ofType="ContactTelDetail"-->
+                    <!--column="contact_id" select="selectTelDetailsForContact">-->
+        <!--</collection>-->
+    <!--</resultMap>-->
+
+    <!--Modified result map with hobbies-->
     <resultMap id="contactResultDetailMap" type="Contact">
         <id property="id" column="contact_id"/>
         <result property="firstName" column="first_name" />
         <result property="lastName" column="last_name" />
         <result property="birthDate" column="birth_date" />
-        <collection property="contactTelDetails" ofType="ContactTelDetail"
-                    column="contact_id" select="selectTelDetailsForContact">
+        <collection property="contactTelDetails" ofType="ContactTelDetail">
+            <id property="id" column="contact_tel_detail_id" />
+            <result property="telType" column="tel_type"></result>
+            <result property="telNumber" column="tel_number"></result>
+        </collection>
+        <collection property="hobbies" ofType="Hobby">
+            <result property="hobbyId" column="hobby_id"/>
         </collection>
     </resultMap>
 
@@ -28,13 +44,29 @@
         <result property="telNumber" column="tel_number"/>
     </resultMap>
 
+    <!--<select id="findAllWithDetail" resultMap="contactResultDetailMap">-->
+        <!--SELECT-->
+        <!--c.contact_id,-->
+        <!--c.first_name,-->
+        <!--c.last_name,-->
+        <!--c.birth_date-->
+        <!--FROM contact c-->
+    <!--</select>-->
+
+    <!-- Modified select with hobby -->
     <select id="findAllWithDetail" resultMap="contactResultDetailMap">
         SELECT
         c.contact_id,
         c.first_name,
         c.last_name,
-        c.birth_date
+        c.birth_date,
+        t.contact_tel_detail_id,
+        t.tel_type,
+        t.tel_number,
+        h.hobby_id
         FROM contact c
+        LEFT OUTER JOIN contact_tel_detail t ON c.contact_id = t.contact_id
+        LEFT OUTER JOIN contact_hobby_detail h ON c.contact_id = h.contact_id
     </select>
 
     <select id="selectTelDetailsForContact" parameterType="long"
@@ -53,5 +85,44 @@
         last_name,
         birth_date
         FROM CONTACT
+    </select>
+
+    <select id="findById" parameterType="long" resultMap="contactResultDetailMap">
+        SELECT
+        c.contact_id,
+        c.first_name,
+        c.last_name,
+        c.birth_date,
+        t.contact_tel_detail_id,
+        t.tel_type,
+        t.tel_number,
+        h.hobby_id
+        FROM contact c
+        LEFT OUTER JOIN contact_tel_detail t ON c.contact_id = t.contact_id
+        LEFT OUTER JOIN contact_hobby_detail h ON c.contact_id = h.contact_id
+        WHERE  c.contact_id = #{id}
+    </select>
+
+    <select id="findByFirstNameAndLastName" parameterType="SearchCriteria" resultMap="contactResultDetailMap">
+               SELECT
+        c.contact_id,
+        c.first_name,
+        c.last_name,
+        c.birth_date,
+        t.contact_tel_detail_id,
+        t.tel_type,
+        t.tel_number,
+        h.hobby_id
+        FROM contact c
+        LEFT OUTER JOIN contact_tel_detail t ON c.contact_id = t.contact_id
+        LEFT OUTER JOIN contact_hobby_detail h ON c.contact_id = h.contact_id
+        <where>
+            <if test="firstName != null">
+                first_name = #{firstName}
+            </if>
+            <if test="lastName != null">
+                AND last_name = #{lastName}
+            </if>
+        </where>
     </select>
 </mapper>

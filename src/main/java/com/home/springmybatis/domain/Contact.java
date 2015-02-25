@@ -15,6 +15,7 @@ public class Contact implements Serializable {
     private String lastName;
     private Date birthDate;
     private Set<ContactTelDetail> contactTelDetails = new HashSet<ContactTelDetail>();
+    private Set<Hobby> hobbies = new HashSet<Hobby>();
 
     public Long getId() {
         return id;
@@ -56,6 +57,14 @@ public class Contact implements Serializable {
         this.contactTelDetails = contactTelDetails;
     }
 
+    public Set<Hobby> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(Set<Hobby> hobbies) {
+        this.hobbies = hobbies;
+    }
+
     @Override
     public String toString() {
         return "Contact{" +
@@ -64,6 +73,7 @@ public class Contact implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
                 ", contactTelDetails=" + contactTelDetails +
+                ", hobbies=" + hobbies +
                 '}';
     }
 }

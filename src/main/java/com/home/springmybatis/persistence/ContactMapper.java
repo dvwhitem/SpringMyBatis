@@ -1,6 +1,7 @@
 package com.home.springmybatis.persistence;
 
 import com.home.springmybatis.domain.Contact;
+import com.home.springmybatis.domain.SearchCriteria;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
 public interface ContactMapper {
     public List<Contact> findAll();
     public List<Contact> findAllWithDetail();
+    public Contact findById(Long id);
+    public List<Contact> findByFirstNameAndLastName(SearchCriteria searchCriteria);
 }

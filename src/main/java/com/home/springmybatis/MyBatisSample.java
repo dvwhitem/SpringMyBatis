@@ -2,9 +2,11 @@ package com.home.springmybatis;
 
 import com.home.springmybatis.domain.Contact;
 import com.home.springmybatis.domain.ContactTelDetail;
+import com.home.springmybatis.domain.Hobby;
 import com.home.springmybatis.service.ContactService;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,6 +31,17 @@ public class MyBatisSample {
         // contact with detail
         contacts = contactService.findAllWithDetail();
         listContactsWithDetail(contacts);
+
+        // find contact by id
+        contacts = new ArrayList<Contact>();
+        System.out.println("Finding contact with id 1");
+        Contact contact = contactService.findById(1l);
+        contacts.add(contact);
+        listContactsWithDetail(contacts);
+
+        // find by first name and last name
+        contacts = contactService.findByFirstNameAndLastName(null, "Ho");
+        listContactsWithDetail(contacts);
     }
 
     private static void listContacts(List<Contact> contacts) {
@@ -48,6 +61,11 @@ public class MyBatisSample {
             if(contact.getContactTelDetails() != null) {
                 for (ContactTelDetail contactTelDetail: contact.getContactTelDetails()) {
                     System.out.println(contactTelDetail);
+                }
+            }
+            if(contact.getHobbies() != null) {
+                for(Hobby hobby: contact.getHobbies()) {
+                    System.out.println(hobby);
                 }
             }
             System.out.println();
