@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface ContactMapper {
     public List<Contact> findAll();
+    public List<Contact> findAllWithDetail();
 }

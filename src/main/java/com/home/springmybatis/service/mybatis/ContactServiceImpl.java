@@ -1,6 +1,7 @@
 package com.home.springmybatis.service.mybatis;
 
 import com.home.springmybatis.domain.Contact;
+import com.home.springmybatis.domain.ContactTelDetail;
 import com.home.springmybatis.persistence.ContactMapper;
 import com.home.springmybatis.service.ContactService;
 import org.apache.commons.logging.Log;
@@ -33,8 +34,13 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Contact> findAllWithDetail() {
-        return null;
+        List<Contact> contacts = contactMapper.findAllWithDetail();
+        for(Contact contact: contacts) {
+            populateContactTelDetail(contact);
+        }
+        return contacts;
     }
 
     @Override
@@ -55,5 +61,13 @@ public class ContactServiceImpl implements ContactService {
     @Override
     public List<Contact> findByFirstNameAndLastName(String firstName, String lastName) {
         return null;
+    }
+
+    private void populateContactTelDetail(Contact contact) {
+        if(contact.getContactTelDetails() != null) {
+            for(ContactTelDetail contactTelDetail: contact.getContactTelDetails()) {
+                contactTelDetail.setContact(contact);
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.home.springmybatis;
 
 import com.home.springmybatis.domain.Contact;
+import com.home.springmybatis.domain.ContactTelDetail;
 import com.home.springmybatis.service.ContactService;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
@@ -21,8 +22,13 @@ public class MyBatisSample {
 
         List<Contact> contacts;
 
+        // all contact
         contacts = contactService.findAll();
         listContacts(contacts);
+
+        // contact with detail
+        contacts = contactService.findAllWithDetail();
+        listContactsWithDetail(contacts);
     }
 
     private static void listContacts(List<Contact> contacts) {
@@ -30,6 +36,20 @@ public class MyBatisSample {
         System.out.println("Listining contacts without details: ");
         for (Contact contact: contacts) {
             System.out.println(contact);
+            System.out.println();
+        }
+    }
+
+    private static void listContactsWithDetail(List<Contact> contacts) {
+        System.out.println();
+        System.out.println("Listinig contacts with details:");
+        for(Contact contact: contacts) {
+            System.out.println(contact);
+            if(contact.getContactTelDetails() != null) {
+                for (ContactTelDetail contactTelDetail: contact.getContactTelDetails()) {
+                    System.out.println(contactTelDetail);
+                }
+            }
             System.out.println();
         }
     }

@@ -12,6 +12,39 @@
         <result property="birthDate" column="birth_date" />
     </resultMap>
 
+    <resultMap id="contactResultDetailMap" type="Contact">
+        <id property="id" column="contact_id"/>
+        <result property="firstName" column="first_name" />
+        <result property="lastName" column="last_name" />
+        <result property="birthDate" column="birth_date" />
+        <collection property="contactTelDetails" ofType="ContactTelDetail"
+                    column="contact_id" select="selectTelDetailsForContact">
+        </collection>
+    </resultMap>
+
+    <resultMap id="contactTelDetailResultMap" type="ContactTelDetail">
+        <id property="id" column="contact_tel_detail_id" />
+        <result property="telType" column="tel_type" />
+        <result property="telNumber" column="tel_number"/>
+    </resultMap>
+
+    <select id="findAllWithDetail" resultMap="contactResultDetailMap">
+        SELECT
+        c.contact_id,
+        c.first_name,
+        c.last_name,
+        c.birth_date
+        FROM contact c
+    </select>
+
+    <select id="selectTelDetailsForContact" parameterType="long"
+            resultType="ContactTelDetail" resultMap="contactTelDetailResultMap">
+        SELECT
+        contact_tel_detail_id,
+        tel_type,
+        tel_number
+        FROM contact_tel_detail WHERE contact_id=#{id}
+    </select>
 
     <select id="findAll" resultMap="contactResultMap">
         SELECT
