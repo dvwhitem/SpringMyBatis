@@ -125,4 +125,21 @@
             </if>
         </where>
     </select>
+
+    <insert id="insertContact" parameterType="Contact" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO contact(first_name, last_name, birth_date)
+        VALUES (#{firstName}, #{lastName}, #{birthDate})
+    </insert>
+
+    <update id="updateContact" parameterType="Contact">
+        UPDATE contact SET
+        first_name = #{firstName},
+        last_name = #{lastName},
+        birth_date = #{birthDate}
+        WHERE contact_id = #{id}
+    </update>
+
+    <delete id="deleteContact" parameterType="long">
+        DELETE FROM contact WHERE contact_id = #{id}
+    </delete>
 </mapper>

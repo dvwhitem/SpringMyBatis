@@ -20,4 +20,5 @@ public interface ContactService {
     public void delete(Contact contact);
 
     public List<Contact> findByFirstNameAndLastName(String firstName, String lastName);
+
 }

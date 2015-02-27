@@ -13,4 +13,7 @@ public interface ContactMapper {
     public List<Contact> findAllWithDetail();
     public Contact findById(Long id);
     public List<Contact> findByFirstNameAndLastName(SearchCriteria searchCriteria);
+    public void insertContact(Contact contact);
+    public void updateContact(Contact contact);
+    public void deleteContact(Long id);
 }
